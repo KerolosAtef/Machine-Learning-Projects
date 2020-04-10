@@ -292,6 +292,7 @@ def main(input_list):
 
 @app.route('/output', methods=['POST'])
 def output():
+    # the request should be array of strings
     input_list = request.get_json('text')['text']
     return main(input_list)
 
