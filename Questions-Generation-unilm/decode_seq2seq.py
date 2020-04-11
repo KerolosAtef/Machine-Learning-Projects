@@ -58,7 +58,7 @@ def main(input_list):
                              "bert-large-uncased, bert-base-cased, bert-base-multilingual, bert-base-chinese.")
     parser.add_argument("--model_recover_path",
                         default="qg_model.bin", type=str,
-                        help="The file of fine-tuned pretraining model.")
+                        help="The file of fine-tuned pretrained model.")
     parser.add_argument("--max_seq_length", default=512, type=int,
                         help="The maximum total input sequence length after WordPiece tokenization. \n"
                              "Sequences longer than this will be truncated, and sequences shorter \n"
@@ -85,13 +85,13 @@ def main(input_list):
                         type=str, help="output file")
     parser.add_argument("--split", type=str, default="test",
                         help="Data split (train/val/test).")
-    parser.add_argument('--tokenized_input', action='store_true',
+    parser.add_argument('--tokenized_input', action='store_true',default=True,
                         help="Whether the input is tokenized.")
     parser.add_argument('--seed', type=int, default=123,
                         help="random seed for initialization")
     parser.add_argument("--do_lower_case", action='store_true',
                         help="Set this flag if you are using an uncased model.")
-    parser.add_argument('--new_segment_ids', action='store_true',
+    parser.add_argument('--new_segment_ids', action='store_true',default=True,
                         help="Use new segment ids for bi-uni-directional LM.")
     parser.add_argument('--new_pos_ids', action='store_true',
                         help="Use new position ids for LMs.")
@@ -299,4 +299,4 @@ def output():
 
 if __name__ == "__main__":
     app.run(debug=True)
-    # print(main(["kfnkfnk ddjnjd ddk djnfjfnj djndj in fjnfj","djnwjkkfns skjfnsk  fsjkfn sfss"]))
+    # print(main(["Pizza is a great food", "this is a boy"]))
